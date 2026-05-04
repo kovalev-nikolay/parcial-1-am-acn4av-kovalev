@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String KEY_MODE = "mode";
+
     private TextView tvStatsModeTitle;
     private TextView tvAccuracyPercent;
     private TextView tvShotsCount;
@@ -38,7 +40,15 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         setupClicks();
 
-        showJuntosStats();
+        String mode = getSharedPreferences("app", MODE_PRIVATE)
+                .getString(KEY_MODE, "juntos");
+
+        switch (mode) {
+            case "libres": showLibresStats(); break;
+            case "campo": showCampoStats(); break;
+            case "tres": showTresStats(); break;
+            default: showJuntosStats();
+        }
     }
 
     private void initViews() {
@@ -65,26 +75,51 @@ public class MainActivity extends AppCompatActivity {
         tvAccuracyPercent.setText("27%");
         tvShotsCount.setText("270 / 1000");
         imgStatsRing.setImageResource(R.drawable.stats_ring_static);
+        setActiveButton(btnJuntos);
+
+        getSharedPreferences("app", MODE_PRIVATE)
+                .edit().putString(KEY_MODE, "juntos").apply();
     }
 
     private void showLibresStats() {
         tvStatsModeTitle.setText("Tiros libres");
         tvAccuracyPercent.setText("64%");
         tvShotsCount.setText("64 / 100");
-        imgStatsRing.setImageResource(R.drawable.stats_ring_static);
+        imgStatsRing.setImageResource(R.drawable.stats_ring_libres);
+        setActiveButton(btnLibres);
+
+        getSharedPreferences("app", MODE_PRIVATE)
+                .edit().putString(KEY_MODE, "libres").apply();
     }
 
     private void showCampoStats() {
         tvStatsModeTitle.setText("Tiros de campo");
         tvAccuracyPercent.setText("42%");
         tvShotsCount.setText("84 / 200");
-        imgStatsRing.setImageResource(R.drawable.stats_ring_static);
+        imgStatsRing.setImageResource(R.drawable.stats_ring_campo);
+        setActiveButton(btnCampo);
+
+        getSharedPreferences("app", MODE_PRIVATE)
+                .edit().putString(KEY_MODE, "campo").apply();
     }
 
     private void showTresStats() {
         tvStatsModeTitle.setText("Tiros de tres");
         tvAccuracyPercent.setText("31%");
         tvShotsCount.setText("31 / 100");
-        imgStatsRing.setImageResource(R.drawable.stats_ring_static);
+        imgStatsRing.setImageResource(R.drawable.stats_ring_tres);
+        setActiveButton(btnTres);
+
+        getSharedPreferences("app", MODE_PRIVATE)
+                .edit().putString(KEY_MODE, "tres").apply();
+    }
+
+    private void setActiveButton(FrameLayout activeButton) {
+        btnJuntos.setBackgroundResource(R.drawable.bg_button_train);
+        btnLibres.setBackgroundResource(R.drawable.bg_button_train);
+        btnCampo.setBackgroundResource(R.drawable.bg_button_train);
+        btnTres.setBackgroundResource(R.drawable.bg_button_train);
+
+        activeButton.setBackgroundResource(R.drawable.bg_button_active);
     }
 }

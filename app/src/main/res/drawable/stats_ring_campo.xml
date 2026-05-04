@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+
+    <!-- серое кольцо-фон -->
+    <path
+        android:pathData="M120,32 A88,88 0,1,1 119.9,32"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#3A3A3A"
+        android:strokeWidth="18"
+        android:strokeLineCap="round" />
+
+    <!-- тонкий внешний оранжевый круг -->
+    <path
+        android:pathData="M120,20 A100,100 0,1,1 119.9,20"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/color_orange"
+        android:strokeWidth="1" />
+
+    <!-- тонкий внутренний оранжевый круг -->
+    <path
+        android:pathData="M120,44 A76,76 0,1,1 119.9,44"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/color_orange"
+        android:strokeWidth="1" />
+
+    <!-- прогресс примерно 27%, от 12 часов до чуть после 3 часов -->
+    <path
+        android:pathData="M120,32 A88,88 0,0,1 180,190"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/color_orange"
+        android:strokeWidth="18"
+        android:strokeLineCap="round" />
+
+    <!-- светлая часть, имитация градиента -->
+    <path
+        android:pathData="M155,39 A88,88 0,0,1 207,131"
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFA64D"
+        android:strokeWidth="8"
+        android:strokeLineCap="round" />
+
+</vector>
