@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private FrameLayout btnLibres;
     private FrameLayout btnCampo;
     private FrameLayout btnTres;
+
+    private LinearLayout layoutHomeContent;
+    private TextView tvDynamicModeInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,19 @@ public class MainActivity extends AppCompatActivity {
         btnLibres = findViewById(R.id.btnLibres);
         btnCampo = findViewById(R.id.btnCampo);
         btnTres = findViewById(R.id.btnTres);
+
+        layoutHomeContent = findViewById(R.id.layoutHomeContent);
+        createDynamicModeInfo();
+    }
+
+    private void createDynamicModeInfo() {
+        tvDynamicModeInfo = new TextView(this);
+        tvDynamicModeInfo.setText("Modo seleccionado: Juntos");
+        tvDynamicModeInfo.setTextColor(getResources().getColor(R.color.color_orange));
+        tvDynamicModeInfo.setTextSize(14);
+        tvDynamicModeInfo.setPadding(0, 12, 0, 0);
+
+        layoutHomeContent.addView(tvDynamicModeInfo);
     }
 
     private void setupClicks() {
@@ -76,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         tvShotsCount.setText("270 / 1000");
         imgStatsRing.setImageResource(R.drawable.stats_ring_static);
         setActiveButton(btnJuntos);
+        tvDynamicModeInfo.setText("Modo seleccionado: Juntos");
 
         getSharedPreferences("app", MODE_PRIVATE)
                 .edit().putString(KEY_MODE, "juntos").apply();
@@ -87,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         tvShotsCount.setText("64 / 100");
         imgStatsRing.setImageResource(R.drawable.stats_ring_libres);
         setActiveButton(btnLibres);
+        tvDynamicModeInfo.setText("Modo seleccionado: Tiros libres");
 
         getSharedPreferences("app", MODE_PRIVATE)
                 .edit().putString(KEY_MODE, "libres").apply();
@@ -98,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         tvShotsCount.setText("84 / 200");
         imgStatsRing.setImageResource(R.drawable.stats_ring_campo);
         setActiveButton(btnCampo);
+        tvDynamicModeInfo.setText("Modo seleccionado: Tiros de campo");
 
         getSharedPreferences("app", MODE_PRIVATE)
                 .edit().putString(KEY_MODE, "campo").apply();
@@ -109,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         tvShotsCount.setText("31 / 100");
         imgStatsRing.setImageResource(R.drawable.stats_ring_tres);
         setActiveButton(btnTres);
+        tvDynamicModeInfo.setText("Modo seleccionado: Tiros de tres");
 
         getSharedPreferences("app", MODE_PRIVATE)
                 .edit().putString(KEY_MODE, "tres").apply();
