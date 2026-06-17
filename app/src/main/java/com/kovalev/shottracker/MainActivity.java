@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -85,6 +86,11 @@ public class MainActivity extends AppCompatActivity {
         btnLibres.setOnClickListener(v -> showLibresStats());
         btnCampo.setOnClickListener(v -> showCampoStats());
         btnTres.setOnClickListener(v -> showTresStats());
+
+        findViewById(R.id.navTraining).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void showJuntosStats() {
