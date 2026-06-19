@@ -5,6 +5,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextView;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import java.util.Locale;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +16,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ShotSessionActivity extends AppCompatActivity {
 
+    private static final String PREFS_NAME = "training_sessions";
+    private static final String KEY_SESSIONS = "sessions";
     private TextView tvSessionMode;
     private TextView tvSessionCounter;
     private TextView tvSessionStatus;
@@ -115,6 +119,13 @@ public class ShotSessionActivity extends AppCompatActivity {
             averageTime = ((lastShotAt - startedAt) / 1000.0) / totalCount;
         }
 
+        int percent = 0;
+        if (totalCount > 0) {
+            percent = Math.round((madeCount * 100f) / totalCount);
+        }
+
+        saveSessionLocally(endedAt, percent, averageTime);
+
         Intent intent = new Intent(ShotSessionActivity.this, SessionResultActivity.class);
         intent.putExtra(SessionResultActivity.EXTRA_MODE_TITLE, modeTitle);
         intent.putExtra(SessionResultActivity.EXTRA_MADE_COUNT, madeCount);
@@ -126,5 +137,35 @@ public class ShotSessionActivity extends AppCompatActivity {
 
         startActivity(intent);
         finish();
+    }
+
+    private void saveSessionLocally(long endedAt, int percent, double averageTime) {
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+
+        String oldSessions = preferences.getString(KEY_SESSIONS, "");
+
+        String averageTimeText = String.format(Locale.US, "%.1f", averageTime);
+
+        String newSession = mode + ";"
+                + modeTitle + ";"
+                + startedAt + ";"
+                + endedAt + ";"
+                + madeCount + ";"
+                + totalCount + ";"
+                + percent + ";"
+                + maxStreak + ";"
+                + averageTimeText;
+
+        String updatedSessions;
+
+        if (oldSessions.isEmpty()) {
+            updatedSessions = newSession;
+        } else {
+            updatedSessions = oldSessions + "\n" + newSession;
+        }
+
+        preferences.edit()
+                .putString(KEY_SESSIONS, updatedSessions)
+                .apply();
     }
 }
