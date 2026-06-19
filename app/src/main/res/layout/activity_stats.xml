@@ -8,7 +8,7 @@
     android:background="@drawable/bg_screen">
 
     <LinearLayout
-        android:id="@+id/layoutTrainingSelectContent"
+        android:id="@+id/layoutStatsContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -23,33 +23,35 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/tvTrainingSelectTitle"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvStatsScreenTitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Seleccionar entrenamiento"
+            android:gravity="center"
+            android:text="Estadísticas"
             android:textColor="@color/color_white"
-            android:textSize="28sp"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvTrainingSelectSubtitle"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvStatsScreenSubtitle"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Elegí qué tipo de tiros vas a registrar"
-            android:textColor="@color/color_white"
-            android:textSize="15sp" />
+            android:gravity="center"
+            android:text="Elegí un tipo de entrenamiento"
+            android:textColor="@color/color_orange"
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvTrainingSelectIcon"
+            android:id="@+id/tvStatsIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="34dp"
-            android:text="🏀"
-            android:textSize="72sp" />
+            android:text="📊"
+            android:textSize="64sp" />
 
         <GridLayout
-            android:id="@+id/layoutTrainingModeButtons"
+            android:id="@+id/layoutStatsModeButtons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -57,7 +59,7 @@
             android:rowCount="2">
 
             <FrameLayout
-                android:id="@+id/btnTrainJuntos"
+                android:id="@+id/btnStatsJuntos"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:layout_columnWeight="1"
@@ -76,7 +78,7 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/btnTrainLibres"
+                android:id="@+id/btnStatsLibres"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:layout_columnWeight="1"
@@ -95,7 +97,7 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/btnTrainCampo"
+                android:id="@+id/btnStatsCampo"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:layout_columnWeight="1"
@@ -114,7 +116,7 @@
             </FrameLayout>
 
             <FrameLayout
-                android:id="@+id/btnTrainTres"
+                android:id="@+id/btnStatsTres"
                 android:layout_width="0dp"
                 android:layout_height="92dp"
                 android:layout_columnWeight="1"
@@ -135,12 +137,12 @@
         </GridLayout>
 
         <TextView
-            android:id="@+id/tvTrainingSelectInfo"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvStatsInfo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="Después de elegir un modo, empieza la sesión de entrenamiento."
+            android:text="Después de elegir una categoría, vas a ver el historial y la tendencia de rendimiento."
             android:textColor="@color/color_orange"
             android:textSize="14sp" />
 
@@ -150,7 +152,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/btnTrainingBackHome"
+            android:id="@+id/btnStatsBackHome"
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:background="@drawable/bg_button_train"

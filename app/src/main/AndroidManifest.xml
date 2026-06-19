@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasketShotTracker">
         <activity
+            android:name=".SessionListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StatsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SessionResultActivity"
             android:exported="false" />
         <activity

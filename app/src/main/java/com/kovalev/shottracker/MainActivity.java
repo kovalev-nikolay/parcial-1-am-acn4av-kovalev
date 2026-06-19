@@ -87,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
         btnCampo.setOnClickListener(v -> showCampoStats());
         btnTres.setOnClickListener(v -> showTresStats());
 
+        findViewById(R.id.navStats).setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, StatsActivity.class);
+            startActivity(intent);
+        });
+
         findViewById(R.id.navTraining).setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TrainingActivity.class);
             startActivity(intent);

@@ -3,6 +3,7 @@ package com.kovalev.shottracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,8 @@ public class SessionResultActivity extends AppCompatActivity {
     public static final String EXTRA_STARTED_AT = "started_at";
     public static final String EXTRA_ENDED_AT = "ended_at";
 
+    public static final String EXTRA_FROM_HISTORY = "from_history";
+
     private TextView tvResultMode;
     private TextView tvResultPercent;
     private TextView tvResultShots;
@@ -31,6 +34,8 @@ public class SessionResultActivity extends AppCompatActivity {
     private TextView tvResultAverageTime;
     private TextView tvResultStart;
     private TextView tvResultEnd;
+    private Button btnResultBackTraining;
+    private boolean fromHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +50,9 @@ public class SessionResultActivity extends AppCompatActivity {
         });
 
         initViews();
+
+        fromHistory = getIntent().getBooleanExtra(EXTRA_FROM_HISTORY, false);
+
         showResultData();
         setupClicks();
     }
@@ -57,6 +65,7 @@ public class SessionResultActivity extends AppCompatActivity {
         tvResultAverageTime = findViewById(R.id.tvResultAverageTime);
         tvResultStart = findViewById(R.id.tvResultStart);
         tvResultEnd = findViewById(R.id.tvResultEnd);
+        btnResultBackTraining = findViewById(R.id.btnResultBackTraining);
     }
 
     private void showResultData() {
@@ -84,6 +93,11 @@ public class SessionResultActivity extends AppCompatActivity {
         tvResultAverageTime.setText(String.format(Locale.getDefault(), "Tiempo promedio por tiro: %.1f seg", averageTime));
         tvResultStart.setText("Inicio: " + formatDate(startedAt));
         tvResultEnd.setText("Fin: " + formatDate(endedAt));
+        if (fromHistory) {
+            btnResultBackTraining.setText("Volver al historial");
+        } else {
+            btnResultBackTraining.setText("Volver a entrenamientos");
+        }
     }
 
     private String formatDate(long time) {
@@ -96,10 +110,14 @@ public class SessionResultActivity extends AppCompatActivity {
     }
 
     private void setupClicks() {
-        findViewById(R.id.btnResultBackTraining).setOnClickListener(v -> {
-            Intent intent = new Intent(SessionResultActivity.this, TrainingActivity.class);
-            startActivity(intent);
-            finish();
+        btnResultBackTraining.setOnClickListener(v -> {
+            if (fromHistory) {
+                finish();
+            } else {
+                Intent intent = new Intent(SessionResultActivity.this, TrainingActivity.class);
+                startActivity(intent);
+                finish();
+            }
         });
 
         findViewById(R.id.btnResultBackHome).setOnClickListener(v -> {
