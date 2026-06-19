@@ -62,14 +62,14 @@
                 android:layout_height="92dp"
                 android:layout_columnWeight="1"
                 android:layout_margin="8dp"
-                android:background="@drawable/bg_button_active">
+                android:background="@drawable/bg_button_train">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Juntos"
-                    android:textColor="@color/color_black"
+                    android:textColor="@color/color_white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

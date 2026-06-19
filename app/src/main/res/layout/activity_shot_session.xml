@@ -83,9 +83,9 @@
                 android:layout_height="76dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/bg_button_active"
+                android:background="@drawable/bg_button_train"
                 android:text="Encesté"
-                android:textColor="@color/color_black"
+                android:textColor="@color/color_white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
