@@ -49,12 +49,11 @@
             android:layout_height="250dp"
             android:layout_marginTop="8dp">
 
-            <ImageView
+            <com.kovalev.shottracker.BasketballProgressView
                 android:id="@+id/imgStatsRing"
                 android:layout_width="240dp"
                 android:layout_height="240dp"
                 android:layout_gravity="center"
-                android:src="@drawable/stats_ring_static"
                 android:contentDescription="Accuracy progress ring" />
 
             <TextView
@@ -71,8 +70,7 @@
                 android:id="@+id/tvBasketballIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="2dp"
+                android:layout_gravity="center"
                 android:text="🏀"
                 android:textSize="28sp" />
 
