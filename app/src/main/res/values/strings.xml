@@ -25,4 +25,13 @@
     <string name="training_select_subtitle">Elegí qué tipo de tiros vas a registrar</string>
     <string name="training_select_info">Después de elegir un modo, empieza la sesión de entrenamiento.</string>
 
+    <!-- Shot session screen -->
+    <string name="shot_session_title">Entrenamiento</string>
+    <string name="shot_session_counter_default">0 / 0</string>
+    <string name="shot_session_counter_label">Aciertos / intentos</string>
+    <string name="shot_made">Encesté</string>
+    <string name="shot_missed">Fallé</string>
+    <string name="shot_session_status">Entrenamiento en curso...</string>
+    <string name="finish_training">Finalizar entrenamiento</string>
+
 </resources>

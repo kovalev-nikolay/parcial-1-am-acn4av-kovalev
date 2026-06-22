@@ -26,7 +26,7 @@
             android:id="@+id/tvSessionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entrenamiento"
+            android:text="@string/shot_session_title"
             android:textColor="@color/color_white"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Tiros libres"
+            android:text="@string/mode_libres"
             android:textColor="@color/color_orange"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -54,7 +54,7 @@
                 android:id="@+id/tvSessionCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 / 0"
+                android:text="@string/shot_session_counter_default"
                 android:textColor="@color/color_white"
                 android:textSize="56sp"
                 android:textStyle="bold" />
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:text="Aciertos / intentos"
+                android:text="@string/shot_session_counter_label"
                 android:textColor="@color/color_orange"
                 android:textSize="15sp" />
 
@@ -84,7 +84,7 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/bg_button_train"
-                android:text="Encesté"
+                android:text="@string/shot_made"
                 android:textColor="@color/color_white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -96,7 +96,7 @@
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/bg_button_train"
-                android:text="Fallé"
+                android:text="@string/shot_missed"
                 android:textColor="@color/color_white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -108,7 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:text="Entrenamiento en curso..."
+            android:text="@string/shot_session_status"
             android:textColor="@color/color_orange"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:background="@drawable/bg_button_train"
-            android:text="Finalizar entrenamiento"
+            android:text="@string/finish_training"
             android:textColor="@color/color_white"
             android:textSize="16sp"
             android:textStyle="bold" />
