@@ -79,7 +79,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void createDynamicModeInfo() {
         tvDynamicModeInfo = new TextView(this);
-        tvDynamicModeInfo.setText("Modo seleccionado: Juntos");
+        tvDynamicModeInfo.setText(
+                getString(R.string.dynamic_mode, getString(R.string.mode_juntos))
+        );
         tvDynamicModeInfo.setTextColor(getColor(R.color.color_orange));
         tvDynamicModeInfo.setTextSize(14);
         tvDynamicModeInfo.setPadding(0, 12, 0, 0);
