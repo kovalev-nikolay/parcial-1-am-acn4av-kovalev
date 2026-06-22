@@ -12,4 +12,11 @@
     <string name="mode_tres">Tiros de tres</string>
 
     <string name="dynamic_mode">Modo seleccionado: %1$s</string>
+
+    <!-- Stats screen -->
+    <string name="stats_title">Estadísticas</string>
+    <string name="stats_subtitle">Elegí un tipo de entrenamiento</string>
+    <string name="stats_icon_description">Ícono de estadísticas</string>
+    <string name="stats_info">Después de elegir una categoría, vas a ver el historial y la tendencia de rendimiento.</string>
+    <string name="back_home">Volver al inicio</string>
 </resources>
