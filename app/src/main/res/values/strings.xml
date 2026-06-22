@@ -70,4 +70,9 @@
     <string name="back_history">Volver al historial</string>
     <string name="empty_date">--</string>
 
+    <!-- Session list dynamic texts -->
+    <string name="session_row_format">%1$s  ·  %2$d%%  ·  %3$d/%4$d</string>
+    <string name="session_row_action">Ver ›</string>
+    <string name="session_empty_message">Todavía no hay entrenamientos para mostrar.</string>
+
 </resources>

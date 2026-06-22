@@ -51,7 +51,7 @@ public class SessionListActivity extends AppCompatActivity {
         }
 
         if (selectedModeTitle == null) {
-            selectedModeTitle = "Juntos";
+            selectedModeTitle = getString(R.string.mode_juntos);
         }
 
         initViews();
@@ -131,9 +131,13 @@ public class SessionListActivity extends AppCompatActivity {
 
         TextView rowInfo = new TextView(this);
         rowInfo.setText(
-                formatShortDate(endedAt)
-                        + "  ·  " + percent + "%"
-                        + "  ·  " + madeCount + "/" + totalCount
+                getString(
+                        R.string.session_row_format,
+                        formatShortDate(endedAt),
+                        percent,
+                        madeCount,
+                        totalCount
+                )
         );
         rowInfo.setTextColor(getColor(R.color.color_white));
         rowInfo.setTextSize(15);
@@ -145,7 +149,7 @@ public class SessionListActivity extends AppCompatActivity {
         );
 
         TextView rowAction = new TextView(this);
-        rowAction.setText("Ver ›");
+        rowAction.setText(R.string.session_row_action);
         rowAction.setTextColor(getColor(R.color.color_orange));
         rowAction.setTextSize(15);
         rowAction.setGravity(Gravity.CENTER_VERTICAL);
@@ -189,7 +193,7 @@ public class SessionListActivity extends AppCompatActivity {
 
     private void addEmptyMessage() {
         TextView emptyText = new TextView(this);
-        emptyText.setText("Todavía no hay entrenamientos para mostrar.");
+        emptyText.setText(R.string.session_empty_message);
         emptyText.setTextColor(getColor(R.color.color_orange));
         emptyText.setTextSize(15);
         emptyText.setGravity(Gravity.CENTER);
@@ -200,7 +204,7 @@ public class SessionListActivity extends AppCompatActivity {
 
     private String formatShortDate(long time) {
         if (time == 0) {
-            return "--";
+            return getString(R.string.empty_date);
         }
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM HH:mm", Locale.getDefault());
