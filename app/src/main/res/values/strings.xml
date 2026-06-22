@@ -34,4 +34,15 @@
     <string name="shot_session_status">Entrenamiento en curso...</string>
     <string name="finish_training">Finalizar entrenamiento</string>
 
+    <!-- Session result screen -->
+    <string name="result_title">Resultado</string>
+    <string name="result_percent_default">0%</string>
+    <string name="result_percent_label">Porcentaje de acierto</string>
+    <string name="result_shots_default">Aciertos / intentos: 0 / 0</string>
+    <string name="result_max_streak_default">Máxima racha: 0</string>
+    <string name="result_average_time_default">Tiempo promedio por tiro: 0 seg</string>
+    <string name="result_start_default">Inicio: --</string>
+    <string name="result_end_default">Fin: --</string>
+    <string name="back_training">Volver a entrenamientos</string>
+
 </resources>

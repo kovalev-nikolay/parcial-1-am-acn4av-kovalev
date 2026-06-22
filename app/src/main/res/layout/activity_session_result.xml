@@ -26,7 +26,7 @@
             android:id="@+id/tvResultTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resultado"
+            android:text="@string/result_title"
             android:textColor="@color/color_white"
             android:textSize="32sp"
             android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Tiros libres"
+            android:text="@string/mode_libres"
             android:textColor="@color/color_orange"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -54,7 +54,7 @@
                 android:id="@+id/tvResultPercent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0%"
+                android:text="@string/result_percent_default"
                 android:textColor="@color/color_orange"
                 android:textSize="56sp"
                 android:textStyle="bold" />
@@ -63,7 +63,7 @@
                 android:id="@+id/tvResultPercentLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Porcentaje de acierto"
+                android:text="@string/result_percent_label"
                 android:textColor="@color/color_white"
                 android:textSize="15sp" />
 
@@ -82,7 +82,7 @@
                 android:id="@+id/tvResultShots"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aciertos / intentos: 0 / 0"
+                android:text="@string/result_shots_default"
                 android:textColor="@color/color_white"
                 android:textSize="16sp" />
 
@@ -91,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Máxima racha: 0"
+                android:text="@string/result_max_streak_default"
                 android:textColor="@color/color_white"
                 android:textSize="16sp" />
 
@@ -100,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Tiempo promedio por tiro: 0 seg"
+                android:text="@string/result_average_time_default"
                 android:textColor="@color/color_white"
                 android:textSize="16sp" />
 
@@ -109,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Inicio: --"
+                android:text="@string/result_start_default"
                 android:textColor="@color/color_white"
                 android:textSize="16sp" />
 
@@ -118,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Fin: --"
+                android:text="@string/result_end_default"
                 android:textColor="@color/color_white"
                 android:textSize="16sp" />
 
@@ -134,7 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="58dp"
             android:background="@drawable/bg_button_active"
-            android:text="Volver a entrenamientos"
+            android:text="@string/back_training"
             android:textColor="@color/color_black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -145,7 +145,7 @@
             android:layout_height="58dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/bg_button_train"
-            android:text="Volver al inicio"
+            android:text="@string/back_home"
             android:textColor="@color/color_white"
             android:textSize="16sp"
             android:textStyle="bold" />
