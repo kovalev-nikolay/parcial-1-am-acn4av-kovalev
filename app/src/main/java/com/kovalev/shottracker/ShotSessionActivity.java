@@ -53,7 +53,7 @@ public class ShotSessionActivity extends AppCompatActivity {
         }
 
         if (modeTitle == null) {
-            modeTitle = "Juntos";
+            modeTitle = getString(R.string.mode_juntos);
         }
 
         startedAt = System.currentTimeMillis();
@@ -99,7 +99,7 @@ public class ShotSessionActivity extends AppCompatActivity {
     }
 
     private void updateCounter() {
-        tvSessionCounter.setText(madeCount + " / " + totalCount);
+        tvSessionCounter.setText(getString(R.string.shot_counter_format, madeCount, totalCount));
     }
 
     private void startStatusBlink() {
